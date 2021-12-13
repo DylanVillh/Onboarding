@@ -64,14 +64,51 @@ public class JavaOnboarding {
 		BigInteger num = new BigInteger(lookAndSayNum);
 		return num;
 	}
+	
+	public static boolean almostPalindrome(String s) {
+		int l = s.length();
+		l = l/2;
+		int count = 0;
+		
+		for(int i = 0; i < l; i++) {
+			if(s.charAt(i)!=s.charAt(s.length()-1-i)) {
+				count++;
+			}
+		}
+		
+		if(count==1) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+	
+	public static int staircase(int n) {
+		if(n<2) {
+			return 1;
+		}else {
+			return staircase(n - 1) + staircase(n - 2);
+		}
+	}
      
     public static void main(String[] args)
     {
-        int[] arr = {5, 4, 6, 46, 54, 12, 13, 17};
-        System.out.println(lcmOfArray(arr));
-        
-        BigInteger bint = new BigInteger("1213200012171979");
-        System.out.println(lookAndSay(bint));
+//        int[] arr = {5, 4, 6, 46, 54, 12, 13, 17};
+//        System.out.println(lcmOfArray(arr));
+//        
+//        BigInteger bint = new BigInteger("1213200012171979");
+//        System.out.println(lookAndSay(bint));
+    	String s = "abcdcbg";
+    	System.out.println(almostPalindrome(s));
+    	
+    	s = "abcdaaa";
+    	System.out.println(almostPalindrome(s));
+    	
+    	int n = 5;
+    	System.out.println(staircase(n));
+    	
+    	n = 8;
+    	System.out.println(staircase(n));
     }
 
 }
